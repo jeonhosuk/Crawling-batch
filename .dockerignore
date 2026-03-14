@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+logs/
+*.log
+.git/
+tests/
+*.html
+test_*.py
+.claude/

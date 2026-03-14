@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(poetry init:*)",
+      "Bash(poetry add:*)",
+      "Bash(poetry run:*)",
+      "Bash(poetry install:*)",
+      "Bash(where mariadb:*)",
+      "Bash(where mysql:*)",
+      "Read(//c/Program Files/**)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root -e \"SELECT user, host, plugin FROM mysql.user WHERE user='root';\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=\"ghtjr1223!\" -e \"SELECT 1;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=\"ghtjr1223!\" -e \"SELECT user, host, plugin FROM mysql.user WHERE user='root';\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -e \"SELECT user, host, plugin FROM mysql.user WHERE user='root';\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -e \"CREATE DATABASE crawling CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT id, title, price, source FROM HOT_DEALS ORDER BY id DESC LIMIT 5;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"TRUNCATE TABLE HOT_DEALS;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT id, title, price, category, shop_name, delivery_fee FROM HOT_DEALS;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"TRUNCATE TABLE HOT_DEALS;\" 2>&1 && poetry run python test_run.py 2>&1)",
+      "WebSearch",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT posted_at, title FROM HOT_DEALS ORDER BY id LIMIT 10;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"TRUNCATE TABLE HOT_DEALS; SELECT COUNT\\(*\\) as cnt FROM HOT_DEALS;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT title, price, original_price, thumbnail FROM HOT_DEALS LIMIT 5;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"TRUNCATE TABLE HOT_DEALS;\" 2>&1 && poetry run python test_real.py 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT title, COUNT\\(*\\) as cnt FROM HOT_DEALS GROUP BY title HAVING cnt > 1 LIMIT 10;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"TRUNCATE TABLE HOT_DEALS; SELECT COUNT\\(*\\) as before FROM HOT_DEALS;\" 2>&1 && poetry run python test_real.py 2>&1 | tail -20)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT title, category, source FROM HOT_DEALS;\" 2>&1)",
+      "Bash(\"/c/Program Files/MariaDB 10.11/bin/mysql.exe\" -u root --password=ghtjr1223! -D crawling -e \"SELECT title, url, category, shop_name, thumbnail, posted_at FROM HOT_DEALS;\" 2>&1)",
+      "Bash(cd:*)",
+      "Bash(ls:*)",
+      "Bash(poetry show:*)"
+    ]
+  }
+}
