@@ -95,14 +95,15 @@ def main():
     # 스케줄러 등록
     scheduler = BlockingScheduler()
 
-    # 핫딜: 30분마다
+    # 핫딜: 오전 8시 ~ 오후 10시 사이, 2시간 간격 (8, 10, 12, 14, 16, 18, 20시)
     scheduler.add_job(
         run_hotdeal_crawlers,
-        "interval",
-        minutes=settings.CRON_INTERVAL_MINUTES,
+        "cron",
+        hour="8,10,12,14,16,18,20",
+        minute=0,
         id="hotdeal_job",
     )
-    logger.info(f"Hotdeal schedule: every {settings.CRON_INTERVAL_MINUTES} minutes")
+    logger.info("Hotdeal schedule: every 2 hours (08:00 ~ 20:00)")
 
     # 프로모션: 매일 오전 9시
     scheduler.add_job(
